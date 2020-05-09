@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import App from './components/App/App';
-import './styles.module.scss';
+import './styles/app.module.scss';
 
 if (process.env.NODE_ENV !== 'production') {
 	var axe = require('react-axe'); // eslint-disable-line no-var

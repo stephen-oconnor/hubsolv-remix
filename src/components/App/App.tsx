@@ -11,8 +11,8 @@ export interface AppProps {
 class App extends React.Component<AppProps, {}> {
 	render(): React.ReactNode {
 		return (
-			<main role="main" className={s.heading}>
-				<h1>
+			<main role="main">
+				<h1 className={s.heading}>
 					{this.props.framework} App with {this.props.compiler}
 				</h1>
 				<img src={img} alt="Cat" />
