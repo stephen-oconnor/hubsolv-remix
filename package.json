@@ -1,7 +1,7 @@
 {
   "name": "remix",
   "version": "1.0.0",
-  "description": "",
+  "description": "Explore millions of radio shows, DJ mixes and podcasts made by passionate creators around the world",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -45,5 +45,13 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephen-oconnor/hubsolv-remix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stephen-oconnor/hubsolv-remix/issues"
+  },
+  "homepage": "https://github.com/stephen-oconnor/hubsolv-remix#readme"
 }
