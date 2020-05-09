@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App compiler={'TypeScript'} framework={'React'} />
+		<App />
 	</React.StrictMode>,
 	document.getElementById('app')
 );

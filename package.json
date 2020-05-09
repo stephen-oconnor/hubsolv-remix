@@ -1,7 +1,7 @@
 {
 	"name": "remix",
 	"version": "1.0.0",
-	"description": "Explore millions of radio shows, DJ mixes and podcasts made by passionate creators around the world",
+	"description": "Explore millions of radio shows, DJ mixes and podcasts made by passionate creators around the world.",
 	"main": "index.js",
 	"scripts": {
 		"build": "webpack --config webpack.config.prod.js",
@@ -34,6 +34,7 @@
 		"jest": "^26.0.1",
 		"mini-css-extract-plugin": "^0.9.0",
 		"node-sass": "^4.14.1",
+		"prop-types": "^15.7.2",
 		"react-axe": "^3.4.1",
 		"react-hot-loader": "^4.12.21",
 		"regenerator-runtime": "^0.13.5",

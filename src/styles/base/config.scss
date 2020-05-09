@@ -5,8 +5,8 @@
 /* Font Stacks
 ---------------------------------------- */
 
-$font_url_google: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300,900';
-$font_family_primary: 'Source Sans Pro', sans-serif;
+$font_url_google: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900';
+$font_family_primary: 'Poppins', sans-serif;
 
 /* Font Weights
 ---------------------------------------- */
@@ -16,48 +16,33 @@ $font_weight_normal: 400;
 $font_weight_bold: 700;
 $font_weight_ultra_bold: 900;
 
+/* Text
+---------------------------------------- */
+
+$base_font_size: 1rem;
+$base_line_height: 1.4;
+
 /* Descriptive Base Colours
 ---------------------------------------- */
 
 $white: #ffffff;
 $black: #000000;
+$light_black: #2e2c27;
 $light_gray: #f6f6f6;
 $gray: #434343;
-$mandy: #e55c54;
+$dark_blue: #001724;
+$yellow: #ff9300;
+$light_yellow: #ffc12e;
 
 /* Colour Usage
 ---------------------------------------- */
 
-$colour_primary: $mandy;
+$colour_primary: $dark_blue;
+$colour_secondary: $light_black;
 
 $text_colour: $gray;
 $text_colour_light: $white;
-$text_colour_dark: $black;
+$text_colour_dark: $light_black;
 
-$link_colour: $mandy;
-$link_colour_hover: darken($mandy, 8%);
-
-/* Colour Palette Modifier
----------------------------------------- */
-
-$palettes: (
-	black: (
-		xx-light: lighten($black, 96%),
-		x-light: lighten($black, 90%),
-		light: lighten($black, 80%),
-		dark: lighten($black, 20%),
-		base: $black,
-	),
-	mandy: (
-		light: lighten($mandy, 5%),
-		base: $mandy,
-		dark: darken($mandy, 5%),
-		x-dark: darken($mandy, 35%),
-	),
-);
-
-/* Text
----------------------------------------- */
-
-$base_font_size: 1em;
-$base_line_height: 1.4;
+$link_colour: $light_black;
+$link_colour_hover: darken($light_black, 8%);
