@@ -1,3 +1,55 @@
-.search {
-	margin: 0;
+.wrapper {
+	padding: 1.5rem;
+}
+
+.title {
+	font-weight: 400;
+	font-size: 2rem;
+	text-align: center;
+	margin: 0 0 1.5rem 0;
+}
+
+.mixes {
+	margin: 3rem 0 1rem 0;
+}
+
+@media screen and (min-width: 580px) {
+	.search {
+		max-width: 580px;
+		margin: 0 auto;
+		padding: 2rem 0 0 0;
+	}
+
+	.title {
+		padding: 0 5rem;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.wrapper {
+		padding: 2.5rem;
+	}
+
+	.title {
+		margin: 0 0 3rem 0;
+	}
+
+	.mixes {
+		margin: 5rem 0 1rem 0;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.wrapper {
+		max-width: 1260px;
+		margin: 0 auto;
+	}
+
+	.title {
+		margin: 0 0 5rem 0;
+	}
+
+	.mixes {
+		margin: 8rem 0 1rem 0;
+	}
 }

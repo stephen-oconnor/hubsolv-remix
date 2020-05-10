@@ -5,5 +5,5 @@ export default function calculateDuration(seconds: number): string {
 	const hours = momentDuration.hours();
 	const minutes = momentDuration.minutes();
 
-	return `${hours}h ${minutes}m`;
+	return hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
 }

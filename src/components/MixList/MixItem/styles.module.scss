@@ -1,0 +1,29 @@
+.mix {
+	display: flex;
+	flex: 1 1 100%;
+	margin: 0 0 2.5rem 0;
+	padding: 0 1.5rem;
+}
+
+.image {
+	display: flex;
+	width: 35%;
+	max-width: 140px;
+}
+
+.details {
+	display: flex;
+	flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+	.mix {
+		flex-basis: 50%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.mix {
+		flex-basis: 33.3333%;
+	}
+}

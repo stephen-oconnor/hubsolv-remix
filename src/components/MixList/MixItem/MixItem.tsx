@@ -10,15 +10,19 @@ interface MixItemProps {
 
 const MixItem: React.FC<MixItemProps> = ({ mix }) => {
 	return (
-		<div className={s.wrapper}>
-			<MixImage src={mix.pictures['640wx640h']} altTag={mix.name} />
-			<MixDetails
-				name={mix.name}
-				artist={mix.user.name}
-				playCount={mix.play_count}
-				duration={mix.audio_length}
-				created={mix.created_time}
-			/>
+		<div className={s.mix}>
+			<div className={s.image}>
+				<MixImage src={mix.pictures.large} altTag={mix.name} />
+			</div>
+			<div className={s.details}>
+				<MixDetails
+					name={mix.name}
+					artist={mix.user.name}
+					playCount={mix.play_count}
+					duration={mix.audio_length}
+					created={mix.created_time}
+				/>
+			</div>
 		</div>
 	);
 };

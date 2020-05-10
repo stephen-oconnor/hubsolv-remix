@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTyoes from 'prop-types';
+import IconPlay from '../../Icons/IconPlay';
+import IconTime from '../../Icons/IconTime';
 import calculateDuration from '../../../utils/calculateDuration';
 import calculateCreatedTime from '../../../utils/calculateCreatedTime';
 import s from './styles.module.scss';
@@ -18,9 +20,19 @@ const MixDetails: React.FC<MixDetailsProps> = ({ name, artist, playCount, durati
 			<h3 className={s.title}>{name}</h3>
 			<p className={s.artist}>{artist}</p>
 			<div className={s.info}>
-				<p className={s.count}>{playCount}</p>
-				<p className={s.length}>{calculateDuration(duration)}</p>
-				<p className={s.created}>{calculateCreatedTime(created)}</p>
+				<p className={s.item}>
+					<span className={s.icon}>
+						<IconPlay width={13} height={13} />
+					</span>{' '}
+					{playCount}
+				</p>
+				<p className={`${s.item} ${s['item--duration']}`}>
+					<span className={s.icon}>
+						<IconTime width={13} height={13} />
+					</span>{' '}
+					{calculateDuration(duration)}
+				</p>
+				<p className={s.item}>{calculateCreatedTime(created)}</p>
 			</div>
 		</div>
 	);

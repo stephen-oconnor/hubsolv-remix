@@ -8,11 +8,7 @@ interface MixImageProps {
 }
 
 const MixImage: React.FC<MixImageProps> = ({ src, altTag }) => {
-	return (
-		<div className={s.cover}>
-			<img src={src} alt={altTag} />
-		</div>
-	);
+	return <img src={src} alt={altTag} className={s.image} />;
 };
 
 MixImage.propTypes = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MixItem from './MixItem/MixItem';
+import s from './styles.module.scss';
 
 interface MixListProps {
 	mixes: any;
@@ -8,9 +9,13 @@ interface MixListProps {
 
 const MixList: React.FC<MixListProps> = ({ mixes }) => {
 	if (mixes && mixes.data && mixes.data.length > 0) {
-		return mixes.data.map((mix: any, index: number) => (
-			<MixItem key={`${index}-${mix.name}`} mix={mix} />
-		));
+		return (
+			<div className={s.mixes}>
+				{mixes.data.map((mix: any, index: number) => (
+					<MixItem key={`${index}-${mix.name}`} mix={mix} />
+				))}
+			</div>
+		);
 	} else {
 		return null;
 	}

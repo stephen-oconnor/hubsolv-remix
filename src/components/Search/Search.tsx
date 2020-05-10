@@ -24,18 +24,24 @@ const Search: React.FC = () => {
 	}
 
 	return (
-		<div className={s.search}>
-			<h2>Find your favourite radio shows, DJ mixes and podcasts!</h2>
-			<SearchForm
-				loading={loading}
-				error={error}
-				value={value}
-				onChange={handleChange}
-				onSubmit={handleSubmit}
-			/>
+		<div className={s.wrapper}>
+			<div className={s.search}>
+				<h2 className={s.title}>
+					Find mixes, podcasts and radio shows from your favourite DJs and artists!
+				</h2>
+				<SearchForm
+					loading={loading}
+					error={error}
+					value={value}
+					onChange={handleChange}
+					onSubmit={handleSubmit}
+				/>
+			</div>
 			{loading && <p>Loading...</p>}
 			{error && <p>Error!</p>}
-			<MixList mixes={mixes} />
+			<div className={s.mixes}>
+				<MixList mixes={mixes} />
+			</div>
 		</div>
 	);
 };
