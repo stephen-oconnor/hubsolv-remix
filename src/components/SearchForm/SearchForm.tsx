@@ -5,11 +5,18 @@ import SearchInput from '../common/forms/SearchInput';
 export interface SearchFormProps {
 	value?: string | undefined;
 	loading: boolean;
+	error: boolean;
 	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const SearchForm: React.FC<SearchFormProps> = ({ value, loading = false, onChange, onSubmit }) => {
+const SearchForm: React.FC<SearchFormProps> = ({
+	value,
+	loading = false,
+	error = false,
+	onChange,
+	onSubmit,
+}) => {
 	return (
 		<form onSubmit={onSubmit}>
 			<SearchInput name={'search'} label={'Search'} onChange={onChange} value={value} />
@@ -21,6 +28,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ value, loading = false, onChang
 SearchForm.propTypes = {
 	value: PropTypes.string,
 	loading: PropTypes.bool.isRequired,
+	error: PropTypes.bool.isRequired,
 	onChange: PropTypes.func.isRequired,
 	onSubmit: PropTypes.func.isRequired,
 };

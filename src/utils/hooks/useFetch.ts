@@ -4,31 +4,40 @@ export interface FetchOptions {
 	method: string;
 }
 
-export default function useFetch(url: string, options: FetchOptions, immediate = true) {
+export interface UseFetch {
+	fetchData: () => Promise<void>;
+	loading: boolean;
+	error: boolean;
+	data: any;
+}
+
+export default function useFetch(url: string, options: FetchOptions, immediate = true): UseFetch {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
-	const [data, setData] = useState(null);
+	const [data, setData] = useState({});
 
 	/* Fetch the data, update the state. */
 	const fetchData = useCallback(async () => {
 		try {
 			setLoading(true);
-			setData(null);
+			setData({});
 
 			const response = await fetch(url, options);
 			const data = await response.json();
 
+			if (data.error) {
+				throw data.error;
+			}
+
 			setLoading(false);
 			setData(data);
 			setError(false);
-
-			console.log(data);
 		} catch (error) {
 			setLoading(false);
 			setError(true);
-			setData(null);
+			setData({});
 
-			console.error(error);
+			console.error(`${error.type}: ${error.message}`);
 		}
 	}, [url, options]);
 
