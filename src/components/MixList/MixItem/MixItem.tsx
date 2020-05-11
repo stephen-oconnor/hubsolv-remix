@@ -12,7 +12,7 @@ const MixItem: React.SFC<MixItemProps> = ({ mix }) => {
 	return (
 		<div className={s.mix}>
 			<div className={s.image}>
-				<MixImage src={mix.pictures.large} altTag={mix.name} />
+				<MixImage src={mix.pictures.large} alt={mix.name} />
 			</div>
 			<div className={s.details}>
 				<MixDetails

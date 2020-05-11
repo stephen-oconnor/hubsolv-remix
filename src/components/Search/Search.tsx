@@ -18,8 +18,7 @@ const Search: React.FC = () => {
 	const display = savedValue && items && Object.keys(items).length > 0;
 
 	function handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
-		const newValue = event.target.value;
-		setValue(newValue);
+		setValue(event.target.value);
 	}
 
 	function formIsValid(): boolean {

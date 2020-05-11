@@ -4,16 +4,16 @@ import s from './styles.module.scss';
 
 interface MixImageProps {
 	src: string;
-	altTag: string;
+	alt: string;
 }
 
-const MixImage: React.SFC<MixImageProps> = ({ src, altTag }) => {
-	return <img src={src} alt={altTag} className={s.image} />;
+const MixImage: React.SFC<MixImageProps> = ({ src, alt }) => {
+	return <img src={src} alt={alt} className={s.image} />;
 };
 
 MixImage.propTypes = {
 	src: PropTypes.string.isRequired,
-	altTag: PropTypes.string.isRequired,
+	alt: PropTypes.string.isRequired,
 };
 
 export default MixImage;

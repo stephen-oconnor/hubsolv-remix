@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MixImage /> matches the snapshot 1`] = `
+<img
+  alt="Something meaningful"
+  className="image"
+  src="test-path.jpg"
+/>
+`;
