@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import MixList from '../MixList/MixList';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import LoadingIndicator from '../LoadingIndicator/LoadingIndicator';
 import useFetch from '../../utils/hooks/useFetch';
 import { fetchOptions, limit, type, url } from '../../utils/constants';
 import s from './styles.module.scss';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const Search: React.FC = () => {
 	const [value, setValue] = useState('');
@@ -62,7 +63,7 @@ const Search: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			{loading && <p>Loading...</p>}
+			{loading && <LoadingIndicator />}
 			{error && <ErrorMessage message={'There has been a error, please try again.'} />}
 			{display && (
 				<div className={s.mixes}>
