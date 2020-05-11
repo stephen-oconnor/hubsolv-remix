@@ -7,7 +7,7 @@ interface MixImageProps {
 	altTag: string;
 }
 
-const MixImage: React.FC<MixImageProps> = ({ src, altTag }) => {
+const MixImage: React.SFC<MixImageProps> = ({ src, altTag }) => {
 	return <img src={src} alt={altTag} className={s.image} />;
 };
 

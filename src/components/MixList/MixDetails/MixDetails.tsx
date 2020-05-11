@@ -16,7 +16,7 @@ interface MixDetailsProps {
 	url: string;
 }
 
-const MixDetails: React.FC<MixDetailsProps> = ({
+const MixDetails: React.SFC<MixDetailsProps> = ({
 	name,
 	artist,
 	artistUrl,

@@ -7,20 +7,16 @@ interface MixListProps {
 	mixes: any;
 }
 
-const MixList: React.FC<MixListProps> = ({ mixes }) => {
-	if (mixes && mixes.data && mixes.data.length > 0) {
-		return (
-			<div className={s.mixes}>
-				{mixes.data.map((mix: any, index: number) => (
-					<div key={`${index}-${mix.name}`} className={s.wrapper}>
-						<MixItem mix={mix} />
-					</div>
-				))}
-			</div>
-		);
-	} else {
-		return null;
-	}
+const MixList: React.SFC<MixListProps> = ({ mixes }) => {
+	return (
+		<div className={s.mixes}>
+			{mixes.data.map((mix: any, index: number) => (
+				<div key={`${index}-${mix.name}`} className={s.wrapper}>
+					<MixItem mix={mix} />
+				</div>
+			))}
+		</div>
+	);
 };
 
 MixList.propTypes = {

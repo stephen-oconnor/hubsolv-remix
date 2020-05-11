@@ -8,7 +8,7 @@ interface MixItemProps {
 	mix: any;
 }
 
-const MixItem: React.FC<MixItemProps> = ({ mix }) => {
+const MixItem: React.SFC<MixItemProps> = ({ mix }) => {
 	return (
 		<div className={s.mix}>
 			<div className={s.image}>
