@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
-import MixList from '../MixList/MixList';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import LoadingIndicator from '../LoadingIndicator/LoadingIndicator';
 import useFetch from '../../utils/hooks/useFetch';
 import { fetchOptions, limit, type, url } from '../../utils/constants';
 import s from './styles.module.scss';
+
+const MixList = React.lazy(() => import('../MixList/MixList'));
 
 const Search: React.FC = () => {
 	const [value, setValue] = useState('');
@@ -66,10 +67,12 @@ const Search: React.FC = () => {
 			{loading && <LoadingIndicator />}
 			{error && <ErrorMessage message={'There has been a error, please try again.'} />}
 			{display && (
-				<div className={s.mixes}>
-					<h3 className={s.heading}>Results for: {savedValue}</h3>
-					<MixList mixes={items} />
-				</div>
+				<Suspense fallback={null}>
+					<div className={s.mixes}>
+						<h3 className={s.heading}>Results for: {savedValue}</h3>
+						<MixList mixes={items} />
+					</div>
+				</Suspense>
 			)}
 		</>
 	);
