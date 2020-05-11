@@ -28,12 +28,12 @@ const SearchInput: React.FC<SearchInputProps> = ({
 				type="search"
 				name={name}
 				id={name}
-				className={`${s.control} ${s['control--search']}`}
+				className={`${s.control} ${s['control--search']} ${error ? s.error : ''}`}
 				placeholder={placeholder}
 				value={value}
 				onChange={onChange}
 			/>
-			{error && <div className={s.error}>{error}</div>}
+			{error && <p className={s.srt}>{error}</p>}
 		</div>
 	);
 };

@@ -7,7 +7,7 @@ import s from './styles.module.scss';
 export interface SearchFormProps {
 	value?: string | undefined;
 	loading: boolean;
-	error: boolean;
+	errors: any;
 	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
@@ -15,14 +15,20 @@ export interface SearchFormProps {
 const SearchForm: React.FC<SearchFormProps> = ({
 	value,
 	loading = false,
-	error = false,
+	errors = false,
 	onChange,
 	onSubmit,
 }) => {
 	return (
 		<form className={s.form} onSubmit={onSubmit}>
 			<div className={s.item}>
-				<SearchInput name={'search'} label={'Search'} onChange={onChange} value={value} />
+				<SearchInput
+					name={'search'}
+					label={'Search'}
+					onChange={onChange}
+					value={value}
+					error={errors.search}
+				/>
 			</div>
 			<button type="submit" className={s.submit}>
 				{<span className={s.srt}>{loading ? 'Loading...' : 'Search'}</span>}
@@ -35,7 +41,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
 SearchForm.propTypes = {
 	value: PropTypes.string,
 	loading: PropTypes.bool.isRequired,
-	error: PropTypes.bool.isRequired,
+	errors: PropTypes.object.isRequired,
 	onChange: PropTypes.func.isRequired,
 	onSubmit: PropTypes.func.isRequired,
 };

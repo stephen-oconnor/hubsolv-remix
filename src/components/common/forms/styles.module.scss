@@ -3,6 +3,8 @@
 .wrapper {
 	display: flex;
 	flex: 1;
+	flex-wrap: wrap;
+	position: relative;
 }
 
 /* Hide 'x' in webkit.
@@ -43,6 +45,10 @@ select:-webkit-autofill:focus {
 		border-top-left-radius: 5px;
 		border-bottom-left-radius: 5px;
 	}
+}
+
+.error {
+	border-color: red;
 }
 
 .srt {

@@ -4,23 +4,44 @@ import MixList from '../MixList/MixList';
 import useFetch from '../../utils/hooks/useFetch';
 import { fetchOptions, limit, type, url } from '../../utils/constants';
 import s from './styles.module.scss';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const Search: React.FC = () => {
 	const [value, setValue] = useState('');
+	const [savedValue, setSavedValue] = useState('');
+	const [errors, setErrors] = useState({});
 
 	const fetchUrl = `${url}?q=${value}&type=${type}&limit=${limit}`;
-	const { fetchData, loading, error, data: mixes } = useFetch(fetchUrl, fetchOptions, false);
-	const display = value && mixes && Object.keys(mixes).length > 0;
+	const { fetchData, loading, error, data: items } = useFetch(fetchUrl, fetchOptions, false);
+	const display = savedValue && items && Object.keys(items).length > 0;
 
 	function handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
 		const newValue = event.target.value;
 		setValue(newValue);
 	}
 
+	function formIsValid(): boolean {
+		const errors: any = {};
+
+		if (!value) {
+			errors.search = 'A search term is required.';
+		}
+
+		setErrors(errors);
+
+		return Object.keys(errors).length === 0;
+	}
+
 	function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
 		event.preventDefault();
 
+		if (!formIsValid()) {
+			return;
+		}
+
 		fetchData();
+		setSavedValue(value);
+		setValue('');
 	}
 
 	return (
@@ -33,7 +54,7 @@ const Search: React.FC = () => {
 						</h2>
 						<SearchForm
 							loading={loading}
-							error={error}
+							errors={errors}
 							value={value}
 							onChange={handleChange}
 							onSubmit={handleSubmit}
@@ -42,11 +63,11 @@ const Search: React.FC = () => {
 				</div>
 			</div>
 			{loading && <p>Loading...</p>}
-			{error && <p>Error!</p>}
+			{error && <ErrorMessage message={'There has been a error, please try again.'} />}
 			{display && (
 				<div className={s.mixes}>
-					<h3 className={s.heading}>Music by: {value}</h3>
-					<MixList mixes={mixes} />
+					<h3 className={s.heading}>Results for: {savedValue}</h3>
+					<MixList mixes={items} />
 				</div>
 			)}
 		</>
