@@ -5,7 +5,7 @@
 /* Font Stacks
 ---------------------------------------- */
 
-$font_url_google: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900';
+$font_url_google: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;';
 $font_family_primary: 'Nunito Sans', sans-serif;
 
 /* Font Weights
@@ -13,8 +13,9 @@ $font_family_primary: 'Nunito Sans', sans-serif;
 
 $font_weight_light: 300;
 $font_weight_normal: 400;
-$font_weight_bold: 700;
-$font_weight_ultra_bold: 900;
+$font_weight_bold: 600;
+$font_weight_bolder: 700;
+$font_weight_black: 800;
 
 /* Text
 ---------------------------------------- */
@@ -47,6 +48,6 @@ $text_colour_light: $white;
 $text_colour_dark: $light_black;
 
 $link_colour: $yellow;
-$link_colour_hover: darken($yellow, 8%);
+$link_colour_hover: $light_yellow;
 
 $form_control_border: $gray;

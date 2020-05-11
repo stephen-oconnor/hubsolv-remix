@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTyoes from 'prop-types';
+import PropTypes from 'prop-types';
 import IconPlay from '../../Icons/IconPlay';
 import IconTime from '../../Icons/IconTime';
 import calculateDuration from '../../../utils/calculateDuration';
@@ -9,16 +9,34 @@ import s from './styles.module.scss';
 interface MixDetailsProps {
 	name: string;
 	artist: string;
+	artistUrl: string;
 	playCount: number;
 	duration: number;
 	created: string;
+	url: string;
 }
 
-const MixDetails: React.FC<MixDetailsProps> = ({ name, artist, playCount, duration, created }) => {
+const MixDetails: React.FC<MixDetailsProps> = ({
+	name,
+	artist,
+	artistUrl,
+	playCount,
+	duration,
+	created,
+	url,
+}) => {
 	return (
 		<div className={s.details}>
-			<h3 className={s.title}>{name}</h3>
-			<p className={s.artist}>{artist}</p>
+			<h3 className={s.title}>
+				<a href={url} target="_blank" rel="noopener noreferrer" className={s.link}>
+					{name}
+				</a>
+			</h3>
+			<p className={s.artist}>
+				<a href={artistUrl} target="_blank" rel="noopener noreferrer">
+					{artist}
+				</a>
+			</p>
 			<div className={s.info}>
 				<p className={s.item}>
 					<span className={s.icon}>
@@ -39,11 +57,13 @@ const MixDetails: React.FC<MixDetailsProps> = ({ name, artist, playCount, durati
 };
 
 MixDetails.propTypes = {
-	name: PropTyoes.string.isRequired,
-	artist: PropTyoes.string.isRequired,
-	playCount: PropTyoes.number.isRequired,
-	duration: PropTyoes.number.isRequired,
-	created: PropTyoes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	artist: PropTypes.string.isRequired,
+	artistUrl: PropTypes.string.isRequired,
+	playCount: PropTypes.number.isRequired,
+	duration: PropTypes.number.isRequired,
+	created: PropTypes.string.isRequired,
+	url: PropTypes.string.isRequired,
 };
 
 export default MixDetails;

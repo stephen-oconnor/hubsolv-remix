@@ -1,33 +1,68 @@
+@import '../../styles//base/config.scss';
+
+.search {
+	position: relative;
+	background-image: url('./image_decks.jpg');
+	background-size: cover;
+	background-position: center center;
+	padding: 8rem 0;
+}
+
+.search:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
 .wrapper {
-	padding: 1.5rem;
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+.form {
+	position: relative;
+	z-index: 2;
 }
 
 .title {
-	font-weight: 400;
+	font-weight: $font_weight_normal;
 	font-size: 2rem;
 	text-align: center;
 	margin: 0 0 1.5rem 0;
+	color: $text_colour_light;
 }
 
 .mixes {
-	margin: 3rem 0 1rem 0;
+	margin: 2rem 0 1rem 0;
+	padding: 0 1.5rem;
+}
+
+.heading {
+	font-weight: $font_weight_light;
+	font-size: 2rem;
+	margin: 0 0 1.5rem 0;
+	color: $text_colour_dark;
 }
 
 @media screen and (min-width: 580px) {
-	.search {
-		max-width: 580px;
-		margin: 0 auto;
-		padding: 2rem 0 0 0;
+	.wrapper {
+		padding: 0 4rem;
 	}
 
-	.title {
-		padding: 0 5rem;
+	.mixes {
+		padding: 0 2.5rem;
 	}
 }
 
 @media screen and (min-width: 640px) {
-	.wrapper {
-		padding: 2.5rem;
+	.search {
+		padding: 12rem 0;
 	}
 
 	.title {
@@ -39,17 +74,55 @@
 	}
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
 	.wrapper {
-		max-width: 1260px;
-		margin: 0 auto;
+		max-width: 60%;
 	}
 
+	.title {
+		font-size: 2.2rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.wrapper {
+		max-width: 650px;
+	}
+
+	.title {
+		font-size: 2.5rem;
+	}
+}
+
+@media screen and (min-width: 1200px) {
 	.title {
 		margin: 0 0 5rem 0;
 	}
 
 	.mixes {
-		margin: 8rem 0 1rem 0;
+		margin: 6rem 0 2rem 0;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.search {
+		padding: 14rem 0;
+	}
+
+	.mixes {
+		max-width: 1280px;
+		margin: 6rem auto 2rem auto;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.search {
+		padding: 16rem 0;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.search {
+		padding: 20rem 0;
 	}
 }

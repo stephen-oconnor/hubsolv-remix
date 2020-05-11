@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 interface IconLogoProps {
 	width?: number;
 	height?: number;
-	fill?: string;
 }
 
-const IconLogo: React.SFC<IconLogoProps> = ({ width = 30, height = 30, fill = '#ffffff' }) => {
+const IconLogo: React.SFC<IconLogoProps> = ({ width = 30, height = 30 }) => {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +30,8 @@ const IconLogo: React.SFC<IconLogoProps> = ({ width = 30, height = 30, fill = '#
 };
 
 IconLogo.propTypes = {
-	width: PropTypes.number.isRequired,
-	height: PropTypes.number.isRequired,
-	fill: PropTypes.string.isRequired,
+	width: PropTypes.number,
+	height: PropTypes.number,
 };
 
 export default IconLogo;

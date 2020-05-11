@@ -29,9 +29,9 @@ const IconPlay: React.SFC<IconPlayProps> = ({ width = 30, height = 30, fill = '#
 };
 
 IconPlay.propTypes = {
-	width: PropTypes.number.isRequired,
-	height: PropTypes.number.isRequired,
-	fill: PropTypes.string.isRequired,
+	width: PropTypes.number,
+	height: PropTypes.number,
+	fill: PropTypes.string,
 };
 
 export default IconPlay;

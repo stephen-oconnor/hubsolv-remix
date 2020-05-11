@@ -35,9 +35,9 @@ const IconTime: React.SFC<IconTimeProps> = ({ width = 30, height = 30, fill = '#
 };
 
 IconTime.propTypes = {
-	width: PropTypes.number.isRequired,
-	height: PropTypes.number.isRequired,
-	fill: PropTypes.string.isRequired,
+	width: PropTypes.number,
+	height: PropTypes.number,
+	fill: PropTypes.string,
 };
 
 export default IconTime;

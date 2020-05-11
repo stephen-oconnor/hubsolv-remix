@@ -12,7 +12,9 @@ const MixList: React.FC<MixListProps> = ({ mixes }) => {
 		return (
 			<div className={s.mixes}>
 				{mixes.data.map((mix: any, index: number) => (
-					<MixItem key={`${index}-${mix.name}`} mix={mix} />
+					<div key={`${index}-${mix.name}`} className={s.wrapper}>
+						<MixItem mix={mix} />
+					</div>
 				))}
 			</div>
 		);

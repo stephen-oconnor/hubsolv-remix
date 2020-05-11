@@ -10,6 +10,7 @@ const Search: React.FC = () => {
 
 	const fetchUrl = `${url}?q=${value}&type=${type}&limit=${limit}`;
 	const { fetchData, loading, error, data: mixes } = useFetch(fetchUrl, fetchOptions, false);
+	const display = value && mixes && Object.keys(mixes).length > 0;
 
 	function handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
 		const newValue = event.target.value;
@@ -20,29 +21,35 @@ const Search: React.FC = () => {
 		event.preventDefault();
 
 		fetchData();
-		setValue('');
 	}
 
 	return (
-		<div className={s.wrapper}>
+		<>
 			<div className={s.search}>
-				<h2 className={s.title}>
-					Find mixes, podcasts and radio shows from your favourite DJs and artists!
-				</h2>
-				<SearchForm
-					loading={loading}
-					error={error}
-					value={value}
-					onChange={handleChange}
-					onSubmit={handleSubmit}
-				/>
+				<div className={s.wrapper}>
+					<div className={s.form}>
+						<h2 className={s.title}>
+							Find mixes, podcasts and radio shows from your favourite DJs and artists!
+						</h2>
+						<SearchForm
+							loading={loading}
+							error={error}
+							value={value}
+							onChange={handleChange}
+							onSubmit={handleSubmit}
+						/>
+					</div>
+				</div>
 			</div>
 			{loading && <p>Loading...</p>}
 			{error && <p>Error!</p>}
-			<div className={s.mixes}>
-				<MixList mixes={mixes} />
-			</div>
-		</div>
+			{display && (
+				<div className={s.mixes}>
+					<h3 className={s.heading}>Music by: {value}</h3>
+					<MixList mixes={mixes} />
+				</div>
+			)}
+		</>
 	);
 };
 

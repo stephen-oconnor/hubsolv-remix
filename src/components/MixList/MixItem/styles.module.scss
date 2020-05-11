@@ -1,8 +1,7 @@
 .mix {
 	display: flex;
 	flex: 1 1 100%;
-	margin: 0 0 2.5rem 0;
-	padding: 0 1.5rem;
+	box-shadow: 10px 10px 16px -10px rgba(119, 119, 119, 0.15);
 }
 
 .image {
@@ -14,16 +13,4 @@
 .details {
 	display: flex;
 	flex: 1;
-}
-
-@media screen and (min-width: 768px) {
-	.mix {
-		flex-basis: 50%;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	.mix {
-		flex-basis: 33.3333%;
-	}
 }

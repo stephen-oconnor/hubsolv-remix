@@ -18,9 +18,11 @@ const MixItem: React.FC<MixItemProps> = ({ mix }) => {
 				<MixDetails
 					name={mix.name}
 					artist={mix.user.name}
+					artistUrl={mix.user.url}
 					playCount={mix.play_count}
 					duration={mix.audio_length}
 					created={mix.created_time}
+					url={mix.url}
 				/>
 			</div>
 		</div>
