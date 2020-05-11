@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import App from './components/App/App';
 import './styles/app.module.scss';

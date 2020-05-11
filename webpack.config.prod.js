@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -57,6 +58,7 @@ module.exports = merge(baseConfig, {
 			filename: '[name].[hash].css',
 			chunkFilename: '[id].[hash].css',
 		}),
+		new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 	],
 	externals: {
 		react: 'React',
