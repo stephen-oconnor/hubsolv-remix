@@ -33,6 +33,7 @@ select:-webkit-autofill:focus {
 }
 
 .control {
+	-webkit-appearance: none;
 	display: block;
 	width: 100%;
 	border: 1px solid $form_control_border;
@@ -40,6 +41,7 @@ select:-webkit-autofill:focus {
 	padding: 1rem;
 	color: $text_colour;
 	outline: none;
+	border-radius: 0;
 
 	&--search {
 		border-top-left-radius: 5px;
