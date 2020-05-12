@@ -1,0 +1,20 @@
+.mix {
+	display: flex;
+	flex: 1 1 100%;
+	box-shadow: 10px 10px 16px -10px rgba(119, 119, 119, 0.15);
+}
+
+.image {
+	display: flex;
+	flex: 1 1 auto;
+	max-width: 140px;
+
+	img {
+		align-self: flex-start;
+	}
+}
+
+.details {
+	display: flex;
+	flex: 1;
+}

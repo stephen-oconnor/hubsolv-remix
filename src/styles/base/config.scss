@@ -1,0 +1,53 @@
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+   Global Configuration
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* Font Stacks
+---------------------------------------- */
+
+$font_url_google: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;';
+$font_family_primary: 'Nunito Sans', sans-serif;
+
+/* Font Weights
+---------------------------------------- */
+
+$font_weight_light: 300;
+$font_weight_normal: 400;
+$font_weight_bold: 600;
+$font_weight_bolder: 700;
+$font_weight_black: 800;
+
+/* Text
+---------------------------------------- */
+
+$base_font_size: 1rem;
+$base_line_height: 1.4;
+
+/* Descriptive Base Colours
+---------------------------------------- */
+
+$white: #ffffff;
+$black: #000000;
+$light_black: #2e2c27;
+$light_gray: #f6f6f6;
+$gray: #cdcdcd;
+$dark_gray: #525252;
+$dark_blue: #001724;
+$yellow: #ff9300;
+$light_yellow: #ffc12e;
+
+/* Colour Usage
+---------------------------------------- */
+
+$colour_primary: $dark_blue;
+$colour_secondary: $light_black;
+$colour_tertiary: $yellow;
+
+$text_colour: $dark_gray;
+$text_colour_light: $white;
+$text_colour_dark: $light_black;
+
+$link_colour: $yellow;
+$link_colour_hover: $light_yellow;
+
+$form_control_border: $gray;
