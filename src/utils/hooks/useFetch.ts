@@ -1,9 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
 
-export interface FetchOptions {
-	method: string;
-}
-
 export interface UseFetch {
 	fetchData: () => Promise<void>;
 	loading: boolean;
@@ -11,7 +7,7 @@ export interface UseFetch {
 	data: any;
 }
 
-export default function useFetch(url: string, options: FetchOptions, immediate = true): UseFetch {
+export default function useFetch(url: string, options: any, immediate = true): UseFetch {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	const [data, setData] = useState({});
