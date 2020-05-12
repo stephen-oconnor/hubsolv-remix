@@ -1,0 +1,64 @@
+@import '../../styles/base/config.scss';
+
+@keyframes scale {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1);
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex: 1 1 100%;
+	justify-content: center;
+	align-items: center;
+	max-width: 300px;
+	margin: 3rem auto 1rem auto;
+}
+
+.spinner {
+	height: 40px;
+	width: 40px;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.spinner span {
+	border-radius: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	border: 3px solid $colour_tertiary;
+	opacity: 0;
+	animation: scale 3s ease-out infinite;
+}
+
+.spinner span:nth-child(2) {
+	animation-delay: 2s;
+}
+
+.spinner span:nth-child(3) {
+	animation-delay: 1s;
+}
+
+.srt {
+	border: 0;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}

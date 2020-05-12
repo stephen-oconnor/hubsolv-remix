@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchForm /> matches the snapshot 1`] = `
+<form
+  className="form"
+  onSubmit={[MockFunction]}
+>
+  <div
+    className="item"
+  >
+    <SearchInput
+      label="Search"
+      name="search"
+      onChange={[MockFunction]}
+    />
+  </div>
+  <button
+    className="submit"
+    type="submit"
+  >
+    <span
+      className="srt"
+    >
+      Search
+    </span>
+    <IconSearch
+      fill="#001724"
+      height={24}
+      width={24}
+    />
+  </button>
+</form>
+`;

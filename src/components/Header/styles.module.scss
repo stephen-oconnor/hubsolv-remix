@@ -1,0 +1,12 @@
+@import '../../styles/base/config.scss';
+
+.header {
+	background-color: $colour_primary;
+	padding: 1.5rem;
+}
+
+@media screen and (min-width: 580px) {
+	.header {
+		padding: 2rem 2.5rem;
+	}
+}

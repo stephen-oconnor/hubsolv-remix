@@ -1,0 +1,24 @@
+.mixes {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -1.5rem;
+}
+
+.wrapper {
+	display: flex;
+	flex: 1 1 100%;
+	margin: 0 0 2.5rem 0;
+	padding: 0 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+	.wrapper {
+		flex-basis: 50%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.wrapper {
+		flex-basis: 33.3333%;
+	}
+}
