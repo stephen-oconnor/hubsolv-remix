@@ -16,12 +16,18 @@
 	display: flex;
 	padding: 1rem;
 	color: $colour_secondary;
-	background-color: $colour_tertiary;
+	background-color: $link_colour;
 	border: 0;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	font-size: 1.5rem;
 	outline: none;
+	cursor: pointer;
+	transition: all 0.2s;
+
+	&:hover {
+		background: $link_colour_hover;
+	}
 }
 
 .srt {
